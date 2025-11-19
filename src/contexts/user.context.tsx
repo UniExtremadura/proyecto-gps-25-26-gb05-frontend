@@ -4,7 +4,7 @@ import { useToast } from './toast.context';
 import { useContext } from 'react';
 import { supabase } from '../lib/supabase.ts';
 
-interface FullUser {
+export interface FullUser {
 	id: string;
 
 	// PUBLIC
