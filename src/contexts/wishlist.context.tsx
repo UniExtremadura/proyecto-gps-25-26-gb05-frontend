@@ -26,7 +26,7 @@ const WishlistContext = createContext<WishlistContextType | undefined>(
 	undefined,
 );
 
-export const WishlistProvider = ({ children }: { children: ReactNode }) => {
+export const WishlistProvider = ({ children }: { children?: ReactNode }) => {
 	const auth = useAuth();
 
 	const get = async () => {

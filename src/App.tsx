@@ -28,7 +28,7 @@ import UserWishlist from './routes/user/user-wishlist.tsx';
 import AdminDashboard from './routes/admin/admin-dashboard.tsx';
 import AdminGenres from './routes/admin/admin-genres.tsx';
 import ArtistPayments from './routes/artist/artist-payments.tsx';
-import ArtistStats from './routes/artist/artist-stats.tsx';
+import ArtistStatsComponent from './routes/artist/artist-stats.tsx';
 import Dashboard from './routes/auth/dashboard.tsx';
 import MerchInfo from './routes/merch/merch-info.tsx';
 import AdminOrders from './routes/admin/admin-orders.tsx';
@@ -148,7 +148,7 @@ function App() {
 							}
 						/>
 						<Route path="payments" element={<ArtistPayments />} />
-						<Route path="stats" element={<ArtistStats />} />
+						<Route path="stats" element={<ArtistStatsComponent />} />
 						<Route path="profile" element={<ArtistEditProfile />} />
 					</Route>
 				</Route>

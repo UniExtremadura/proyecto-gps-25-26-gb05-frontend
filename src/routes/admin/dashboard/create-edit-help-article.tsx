@@ -19,7 +19,7 @@ const CreateEditHelpArticle: React.FC<CreateEditArticleProps> = ({
 	const { addHelpArticle, updateHelpArticle } = useHelpArticles();
 
 	const [title, setTitle] = useState(article?.title ?? '');
-	const [category, setCategory] = useState<HelpCategory | ''>(
+	const [category, setCategory] = useState<HelpCategory | string>(
 		article?.category ?? '',
 	);
 	const [content, setContent] = useState(article?.content ?? '');

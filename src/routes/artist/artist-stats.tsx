@@ -12,7 +12,7 @@ import { LuCassetteTape } from 'react-icons/lu';
 import { useEffect, useState } from 'react';
 import { useArtistStats, type ArtistStats } from '../../contexts/artist.stats.context.tsx';
 
-const ArtistStats = () => {
+const ArtistStatsComponent = () => {
 	const artistStats = useArtistStats();
 	const [item, setItem] = useState<ArtistStats | undefined>(undefined);
 
@@ -120,4 +120,4 @@ const ArtistStats = () => {
 	);
 }
 
-export default ArtistStats;
+export default ArtistStatsComponent;

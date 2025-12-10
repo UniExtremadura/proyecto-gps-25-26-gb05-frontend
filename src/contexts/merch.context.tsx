@@ -48,7 +48,7 @@ interface MerchContextType {
 
 const MerchContext = createContext<MerchContextType | undefined>(undefined);
 
-export const MerchProvider = ({ children }: { children: ReactNode }) => {
+export const MerchProvider = ({ children }: { children?: ReactNode }) => {
 	const auth = useAuth();
 
 	const get = async (uuid: string) => {

@@ -24,7 +24,7 @@ interface SongContextType {
 
 const SongContext = createContext<SongContextType | undefined>(undefined);
 
-export const SongProvider = ({ children }: { children: ReactNode }) => {
+export const SongProvider = ({ children }: { children?: ReactNode }) => {
 	const auth = useAuth();
 
 	const getSong = async (uuid: string) => {

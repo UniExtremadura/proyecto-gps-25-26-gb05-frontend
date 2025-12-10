@@ -20,7 +20,7 @@ interface ArtistStatsContextType {
 
 const ArtistStatsContext = createContext<ArtistStatsContextType | undefined>(undefined);
 
-export const ArtistStatsProvider = ({ children }: { children: ReactNode }) => {
+export const ArtistStatsProvider = ({ children }: { children?: ReactNode }) => {
 	const auth = useAuth();
 
 	const get = async () => {

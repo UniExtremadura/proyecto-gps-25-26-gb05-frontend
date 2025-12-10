@@ -5,7 +5,7 @@ import { useAuth } from './auth.context.tsx';
 export interface HelpArticle {
 	uuid: string;
 	title: string;
-	category: HelpCategory;
+	category: HelpCategory | string;
 	date: string;
 	content: string;
 }
@@ -26,7 +26,7 @@ interface HelpContextType {
 	getHelpArticles: () => Promise<HelpArticle[]>;
 	getHelpArticleById: (uuid: string) => Promise<HelpArticle>;
 	addHelpArticle: (article: Omit<HelpArticle, 'uuid' | 'date'>) => Promise<void>;
-	updateHelpArticle: (article: HelpArticle) => Promise<HelpArticle>;
+	updateHelpArticle: (article: Omit<HelpArticle, 'date'>) => Promise<HelpArticle>;
 	deleteHelpArticle: (uuid: string) => Promise<boolean>;
 }
 
@@ -35,7 +35,7 @@ const HelpContext = createContext<HelpContextType | undefined>(undefined);
 
 // Provider
 interface HelpProviderProps {
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export const HelpProvider: React.FC<HelpProviderProps> = ({ children }) => {
@@ -107,7 +107,7 @@ export const HelpProvider: React.FC<HelpProviderProps> = ({ children }) => {
 
 	// Función para actualizar un artículo de ayuda
 	const updateHelpArticle = async (
-		article: HelpArticle,
+		article: Omit<HelpArticle, 'date'>,
 	): Promise<HelpArticle> => {
 		const response = await fetch(
 			`${window.location.origin}/api/v1/help/${article.uuid}`,

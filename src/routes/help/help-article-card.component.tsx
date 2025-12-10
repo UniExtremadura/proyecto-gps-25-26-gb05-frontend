@@ -4,7 +4,7 @@ import type { HelpCategory } from '../../contexts/help.context.tsx';
 interface HelpArticleCardProps {
 	uuid: string;
 	title: string;
-	category: HelpCategory;
+	category: HelpCategory | string;
 	setSelectedId: (id: string) => void;
 }
 
