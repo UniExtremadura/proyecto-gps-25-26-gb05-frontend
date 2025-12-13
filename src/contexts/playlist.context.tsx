@@ -31,7 +31,7 @@ const PlaylistContext = createContext<PlaylistContextType | undefined>(
 	undefined,
 );
 
-export const PlaylistProvider = ({ children }: { children: ReactNode }) => {
+export const PlaylistProvider = ({ children }: { children?: ReactNode }) => {
 	const { session } = useAuth();
 	const toast = useToast();
 

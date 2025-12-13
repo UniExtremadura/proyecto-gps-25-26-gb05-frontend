@@ -10,7 +10,7 @@ interface ToastContextType {
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
-export const ToastProvider = ({ children }: { children: ReactNode }) => {
+export const ToastProvider = ({ children }: { children?: ReactNode }) => {
 	const [toastVisible, setToastVisible] = useState(false);
 	const [toastMsg, setToastMsg] = useState('');
 	const [toastType, setToastType] = useState('');

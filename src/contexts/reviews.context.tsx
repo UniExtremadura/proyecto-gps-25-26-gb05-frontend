@@ -19,7 +19,7 @@ interface ReviewsContextType {
 	getReviews: () => Promise<Review[]>;
 	getReviewById: (uuid: string) => Promise<Review>;
 	getReviewsByProductId: (productUuid: string) => Promise<Review[]>;
-	addReview: (article: Omit<Review, 'uuid' | 'date'>) => Promise<void>;
+	addReview: (article: Omit<Review, 'uuid' | 'user' | 'date'>) => Promise<void>;
 	deleteReview: (uuid: string) => Promise<boolean>;
 }
 
@@ -28,7 +28,7 @@ const ReviewsContext = createContext<ReviewsContextType | undefined>(undefined);
 
 // Provider
 interface ReviewsProviderProps {
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export const ReviewsProvider: React.FC<ReviewsProviderProps> = ({

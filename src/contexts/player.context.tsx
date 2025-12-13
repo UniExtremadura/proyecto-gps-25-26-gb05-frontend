@@ -40,7 +40,7 @@ interface PlayerContextType {
 
 const PlayerContext = createContext<PlayerContextType | undefined>(undefined);
 
-export const PlayerProvider = ({ children }: { children: ReactNode }) => {
+export const PlayerProvider = ({ children }: { children?: ReactNode }) => {
 	const toast = useToast();
 	const auth = useAuth();
 	const audioRef = useRef(new Audio());

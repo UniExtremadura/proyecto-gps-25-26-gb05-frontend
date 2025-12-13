@@ -22,7 +22,7 @@ interface AlbumContextType {
 
 const AlbumContext = createContext<AlbumContextType | undefined>(undefined);
 
-export const AlbumProvider = ({ children }: { children: ReactNode }) => {
+export const AlbumProvider = ({ children }: { children?: ReactNode }) => {
 	const getAlbum = async (uuid: string) => {
 		const response = await fetch(
 			`${window.location.origin}/api/v1/albums/${uuid}`,

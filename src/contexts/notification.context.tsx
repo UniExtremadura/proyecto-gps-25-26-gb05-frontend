@@ -17,7 +17,7 @@ interface NotificationContextType {
 }
 
 interface NotificationProviderProps {
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 const NotificationContext = createContext<NotificationContextType | undefined>(
